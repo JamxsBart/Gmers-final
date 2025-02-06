@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - heart
+  - key
+  - door
+  - TravelScene2
   layers:
   - Default
   - TransparentFX

@@ -9,11 +9,17 @@ public class TeleportAndSwitchCamera : MonoBehaviour
     public float destroyAfterSeconds = 16f;
     private Camera mainCamera;
     private PlayerMovement playerMovement;
+    public GameObject panel; // Reference to the panel you want to activate/deactivate
 
     void Start()
     {
         mainCamera = Camera.main;
+        if (panel != null)
+        {
+            panel.SetActive(false); // Ensure the panel is deactivated at the start
+        }
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -28,9 +34,16 @@ public class TeleportAndSwitchCamera : MonoBehaviour
             StartCoroutine(DestroyTriggerAfterTime());
         }
     }
+
     IEnumerator TeleportPlayer(GameObject player)
     {
         playerMovement.DisableMovement();
+
+        // Activate the panel
+        if (panel != null)
+        {
+            panel.SetActive(true);
+        }
 
         if (newCamera != null)
         {
@@ -48,8 +61,15 @@ public class TeleportAndSwitchCamera : MonoBehaviour
             mainCamera.gameObject.SetActive(true);
         }
 
+        // Deactivate the panel after the teleportation and control re-enable
+        if (panel != null)
+        {
+            panel.SetActive(false);
+        }
+
         playerMovement.EnableMovement();
     }
+
     IEnumerator DestroyTriggerAfterTime()
     {
         yield return new WaitForSeconds(destroyAfterSeconds);

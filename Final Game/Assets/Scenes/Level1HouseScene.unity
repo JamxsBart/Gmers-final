@@ -17566,9 +17566,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You have no idea what you\u2019ve unleashed by coming this far. Every
+  m_Text: "\"You have no idea what you\u2019ve unleashed by coming this far. Every
     victory you think you\u2019ve earned? It only serves to feed the darkness, to
-    make me stronger. Your struggle isn\u2019t brave\u2014it\u2019s necessary. \n-
+    make me stronger. Your struggle isn\u2019t brave\u2014it\u2019s necessary.\"\n-
     EVIL MAGE"
 --- !u!222 &470226077
 CanvasRenderer:
